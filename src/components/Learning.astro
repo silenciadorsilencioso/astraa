@@ -13,7 +13,7 @@ const dropdownItems = [
     {dropdownItems.map((item) => (
         <div class="border-t border-gray-800 pt-4">
             <details class="group">
-            <summary class="flex justify-between items-center cursor-pointer text-lg font-semibold md:text-xl">
+            <summary class="flex justify-between items-center cursor-pointer text-lg font-semibold md:text-xl appearance-none">
                 {item.title}
                 <svg class="ml-2 w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
@@ -27,3 +27,17 @@ const dropdownItems = [
     ))}
     </div>
 </div>
+
+<style>
+    /* Ocultar la flecha por defecto del navegador en dispositivos móviles */
+details summary {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Asegurarse de que la flecha personalizada se vea correctamente */
+details summary::-webkit-details-marker {
+    display: none;
+}
+</style>
