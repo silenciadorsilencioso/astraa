@@ -1,41 +1,44 @@
 ---
-
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Data from '../components/Data.astro';
+import Learning from '../components/Learning.astro';
+import AboutUs from '../components/AboutUs.astro';
+import Calendly from '../components/Calendly.astro';
+import Footer from '../components/Footer.astro';
 
 ---
 
 <Layout title="Algo Traders Hispano">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <main class="relative text-white font-poppins m-auto h-screen flex flex-col justify-center items-center">
-        <div class="absolute inset-0 flex justify-center items-center opacity-5">
-            <img  src="/public/images/logo.png" alt="Logo" class="h-3/4 object-contain pointer-events-none xl:h-2/4	">
-        </div>
-        <div class="relative z-10 flex flex-col justify-center items-center gap-4">
-            <div class="text-center">
-                <h2 class="text-4xl font-bold xl:text-5xl">Alcanza la <span class="custom-text-gradient">RENTABILIDAD</span>  con AlgoTraders💰</h2>
-                <p class="mt-4 text-slate-300">Accede <span class="custom-text-gradient" > YA MISMO</span> a nuestra comunidad y a <span class="custom-text-gradient">TODO</span>  el material</p>
-            </div>
-            <iframe class=" px-2 w-full xl:w-2/5" src="https://embeds.beehiiv.com/48296859-3d03-49ae-83d2-1787272bfbd3?slim=true" 
-            	data-test-id="beehiiv-embed" 
-            	height="52"
-            	frameborder="0" 
-            	scrolling="no" 
-            ></iframe>
-        </div>
-    </main>
+	<main class="text-white font-poppins m-auto ">
+		<div class="max-w-7xl m-auto">
+			<div class="  lg:px-6">
+				<Navbar/>
+			</div>
+			<div class="lg:max-w-6xl m-auto">
+				<div class="mt-12 mx-5 md:mt-8 md:mx-12 xl:mx-10 xl:mt-14">
+					<Hero>
+				</div>
+				<div class=" mt-16 mb-8 mx-6 flex flex-col gap-24">
+					<Data/>
+					<Learning/>
+					<AboutUs />
+					<Calendly/>
+				</div>
+			</div>
+		</div>
+		<footer class="w-full">
+			<Footer/>
+		</footer>
+	</main>
 </Layout>
 
 
-<style>
-	.custom-text-gradient {
-    background: radial-gradient(at 61.681808839936906% 18.713453047060867%, hsla(236.76923076923077, 84.4155844155844%, 69.80392156862744%, 1) 0%, hsla(236.76923076923077, 84.4155844155844%, 69.80392156862744%, 0) 100%),
-                radial-gradient(at 8.792883057247769% 10.531053903989228%, hsla(308.7692307692308, 84.4155844155844%, 69.80392156862744%, 1) 0%, hsla(308.7692307692308, 84.4155844155844%, 69.80392156862744%, 0) 100%),
-                radial-gradient(at 92.39499859343967% 89.18327529767484%, hsla(21.230769230769234, 84.4155844155844%, 69.80392156862744%, 1) 0%, hsla(21.230769230769234, 84.4155844155844%, 69.80392156862744%, 0) 100%),
-                radial-gradient(at 76.09054593785065% 38.92786969520729%, hsla(165.23076923076923, 84.4155844155844%, 69.80392156862744%, 1) 0%, hsla(165.23076923076923, 84.4155844155844%, 69.80392156862744%, 0) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-</style>
+
+
+
