@@ -17,37 +17,33 @@
     </div>
 
     <!-- Videos Responsivos -->
-    <div class="flex  gap-2 md:flex-row md:gap-2">
+    <div class="flex flex-col gap-5 md:flex-row">
         <!-- Video 1 -->
-        <div class="relative w-full md:w-1/2 aspect-w-16 aspect-h-9">
-            <iframe
-                class="absolute top-0 left-0 w-full h-full"
-                allowtransparency="true"
-                src="https://adilo.bigcommand.com/watch/hUHYJ6GT"
-                frameborder="0"
-                allowfullscreen
-                mozallowfullscreen
-                webkitallowfullscreen
-                oallowfullscreen
-                msallowfullscreen
-                scrolling="no">
-            </iframe>
+        <div class="relative w-full md:w-1/2">
+            <div class="video-container">
+                <iframe
+                    class="absolute top-0 left-0 w-full h-full"
+                    allowtransparency="true"
+                    src="https://adilo.bigcommand.com/watch/hUHYJ6GT"
+                    frameborder="0"
+                    allowfullscreen
+                    scrolling="no">
+                </iframe>
+            </div>
         </div>
 
         <!-- Video 2 -->
-        <div class="relative w-full md:w-1/2 aspect-w-16 aspect-h-9">
-            <iframe
-                class="absolute top-0 left-0 w-full h-full"
-                allowtransparency="true"
-                src="https://adilo.bigcommand.com/watch/5GWusA3F"
-                frameborder="0"
-                allowfullscreen
-                mozallowfullscreen
-                webkitallowfullscreen
-                oallowfullscreen
-                msallowfullscreen
-                scrolling="no">
-            </iframe>
+        <div class="relative w-full md:w-1/2">
+            <div class="video-container">
+                <iframe
+                    class="absolute top-0 left-0 w-full h-full"
+                    allowtransparency="true"
+                    src="https://adilo.bigcommand.com/watch/5GWusA3F"
+                    frameborder="0"
+                    allowfullscreen
+                    scrolling="no">
+                </iframe>
+            </div>
         </div>
     </div>
 
@@ -61,39 +57,19 @@
 
 <style>
     /* Proporción de Aspecto para Videos */
-    .aspect-w-16 {
+    .video-container {
         position: relative;
-        width: 100%;
         padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+        height: 0;
+        overflow: hidden;
     }
 
-    .aspect-h-9 iframe {
+    .video-container iframe {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-    }
-
-    /* Animaciones */
-    @keyframes fade-down {
-        from {
-            opacity: 0;
-            transform: translateY(-50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes opactity {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
     }
 
     /* Estilo del Texto con Gradiente */
@@ -113,6 +89,8 @@
             width: 60%;
         }
     }
+
+
 
 /* VIDEO
 <div>
