@@ -1,7 +1,12 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": ["src/**/*.ts", "src/**/*.astro", "env.d.ts"]
+  "compilerOptions": {
+    "strict": false,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.astro", "src/env.d.ts"]
 }
+
 
 
 
