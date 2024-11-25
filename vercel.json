@@ -1,15 +1,14 @@
 
-  {
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          {
-            "key": "Content-Security-Policy",
-            "value": "default-src 'self'; script-src 'self' https://connect.facebook.net https://assets.calendly.com; frame-src https://www.youtube-nocookie.com https://calendly.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.facebook.com;"
-          }
-        ]
-      }
-    ]
-  }
-  
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' https://connect.facebook.net https://assets.calendly.com; frame-src https://www.youtube-nocookie.com https://calendly.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.facebook.com;"
+        }
+      ]
+    }
+  ]
+}
