@@ -7,31 +7,54 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-
-
-
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Te animas a la nueva revolucion?" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/images/logo.ico"/>
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Te animas a la nueva revolucion?" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/svg+xml" href="/images/logo.ico" />
+	<meta name="generator" content={Astro.generator} />
+	<title>{title}</title>
 
+	<script>
+		if (typeof window !== 'undefined') {
+		  !function(f, b, e, v, n, t, s) {
+			if (f.fbq) return;
+			n = f.fbq = function() {
+			  n.callMethod
+				? n.callMethod.apply(n, arguments)
+				: n.queue.push(arguments);
+			};
+			if (!f._fbq) f._fbq = n;
+			n.push = n;
+			n.loaded = !0;
+			n.version = '2.0';
+			n.queue = [];
+			t = b.createElement(e);
+			t.async = !0;
+			t.src = v;
+			s = b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t, s);
+		  }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+		  fbq('init', '925176499039222'); // Tu ID del píxel
+		  fbq('track', 'PageView');
+		}
+	  </script>
+	  <noscript>
+		<img
+		  height="1"
+		  width="1"
+		  style="display:none"
+		  src="https://www.facebook.com/tr?id=925176499039222&ev=PageView&noscript=1"
+		/>
+	  </noscript>
 
-<script src="/public/meta-pixel.js"></script>
-<noscript>
-  <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=925176490903922&ev=PageView&noscript=1" />
-</noscript>
-
-
-	</head>
-	<body class="bg-transparent background-color">
-		<slot />
-	</body>
+</head>
+<body class="bg-transparent background-color">
+	<slot />
+</body>
 </html>
+
 <style is:global>
 	:root {
 		--accent: 136, 58, 234;
@@ -48,9 +71,6 @@ const { title } = Astro.props;
 		font-family: system-ui, sans-serif;
 		background-size: 224px;
 		scroll-behavior: smooth;
-
-
-
 	}
 	code {
 		font-family:
@@ -65,7 +85,7 @@ const { title } = Astro.props;
 	}
 
 	.background-color {
-    background: transparent ;
-	background-image: radial-gradient(at top center,#5a0973 0%,#110616 40%)
-}
+		background: transparent;
+		background-image: radial-gradient(at top center, #5a0973 0%, #110616 40%);
+	}
 </style>
