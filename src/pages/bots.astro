@@ -21,19 +21,10 @@ import Navbar from '../components/Navbar.astro';
         <img style="width: 700px; height: auto;" class="brightness-90" src="/images/TEST.png" alt="Logo Sin Fondo">
       </div>
 
-       <!-- Segunda imagen con efecto de expandir -->
-       <div class="relative group cursor-pointer">
+      <!-- Segunda imagen con efecto de expandir -->
+      <div class="relative group cursor-pointer" id="expandableContainer">
            <!-- Imagen -->
-           <img id="expandableImage" style="width: 700px; height: auto;" class="logo-effect brightness-90 transition-transform duration-300 group-hover:scale-105" src="/images/resultados.png" alt="Logo Sin Fondo">
-           
-           <!-- Ícono de expandir -->
-           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-               <div class="bg-black bg-opacity-50 text-white rounded-full p-3">
-                   <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
-                       <path fill-rule="evenodd" d="M4 8a1 1 0 011-1h4V4a1 1 0 112 0v3h4a1 1 0 110 2h-4v4a1 1 0 11-2 0v-4H5a1 1 0 01-1-1z" clip-rule="evenodd" />
-                   </svg>
-               </div>
-           </div>
+           <img id="expandableImage" style="width: 700px; height: auto;" class=" brightness-90 transition-transform duration-300 group-hover:scale-105" src="/images/Resultados.png" alt="Resultados">
        </div>
 
       <!-- Marca de agua en el fondo -->
@@ -91,13 +82,26 @@ import Navbar from '../components/Navbar.astro';
       justify-content: center;
       align-items: center;
   }
+
+  /* Expansión de imagen al hacer clic */
+  #expandableImage.expanded {
+      transform: scale(1.25);
+      transition: transform 0.3s ease-in-out;
+      z-index: 50;
+  }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const expandableImage = document.getElementById("expandableImage");
-    expandableImage.addEventListener("click", () => {
-      expandableImage.classList.toggle("scale-125");
+    const expandableContainer = document.getElementById("expandableContainer");
+
+    expandableContainer.addEventListener("click", () => {
+      if (expandableImage.classList.contains("expanded")) {
+        expandableImage.classList.remove("expanded");
+      } else {
+        expandableImage.classList.add("expanded");
+      }
     });
   });
 </script>
