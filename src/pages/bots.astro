@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout2.astro';
+import Navbar from '../components/Navbar.astro';
+---
+
+<Layout title="TRADIUN">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/public/logo.ico"/>
+  
+  <main class="min-h-screen relative flex flex-col items-center overflow-hidden">
+
+      <!-- Logo superior -->
+      <div>
+          <img class="w-52 brightness-90" src="/images/Blanco.png" alt="Logo Sin Fondo">
+      </div>
+      
+      <!-- Imagen central -->
+      <div>
+        <img style="width: 700px; height: auto;" class="brightness-90" src="/images/TEST.png" alt="Logo Sin Fondo">
+      </div>
+
+       <!-- Segunda imagen con efecto de expandir -->
+       <div class="relative group cursor-pointer">
+           <!-- Imagen -->
+           <img id="expandableImage" style="width: 700px; height: auto;" class="logo-effect brightness-90 transition-transform duration-300 group-hover:scale-105" src="/images/resultados.png" alt="Logo Sin Fondo">
+           
+           <!-- Ícono de expandir -->
+           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+               <div class="bg-black bg-opacity-50 text-white rounded-full p-3">
+                   <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                       <path fill-rule="evenodd" d="M4 8a1 1 0 011-1h4V4a1 1 0 112 0v3h4a1 1 0 110 2h-4v4a1 1 0 11-2 0v-4H5a1 1 0 01-1-1z" clip-rule="evenodd" />
+                   </svg>
+               </div>
+           </div>
+       </div>
+
+      <!-- Marca de agua en el fondo -->
+      <div class="absolute inset-0 flex justify-center items-center opacity-5">
+          <img src="/images/TRADIUN.webp" alt="Logo" class="h-3/4 object-contain pointer-events-none xl:h-2/4">
+      </div>
+
+      <!-- Texto y botón central -->
+      <div class="relative z-10 text-white font-poppins text-center flex flex-col justify-center items-center gap-10 md:text-3xl">
+        
+          <p class="text-slate-300">Click aca abajo
+              para <span class="custom-text-gradient">ADQUIRIR</span> el sistema.
+          </p>
+
+          <div class="logo-effect p-4 flex justify-center gap-1 bg-white text-black rounded-xl transition-colors duration-300 ease-in-out hover:bg-gray-300 hover:text-black md:m-auto md:w-2/3 lg:w-1/2 xl:w-2/5">
+              <a class="md:text-xl" href="https://api.whatsapp.com/send?phone=541133825664">CLICK AQUI</a>
+          </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="w-full mt-10 flex justify-center">
+        <img class="w-96 brightness-90" src="/images/Doo.png" alt="Logo Sin Fondo">
+      </footer>
+
+  </main>
+</Layout>
+
+<style>
+  /* Aseguramos que el contenido no cause desplazamientos extra */
+  html,
+  body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      height: 100%;
+      background: black; /* Color de fondo de toda la página */
+  }
+
+  .custom-text-gradient {
+      background: radial-gradient(at 61.68% 18.71%, hsla(45, 84%, 60%, 1) 0%, hsla(45, 84%, 60%, 0) 100%),
+                  radial-gradient(at 8.79% 10.53%, hsla(50, 84%, 65%, 1) 0%, hsla(50, 84%, 65%, 0) 100%),
+                  radial-gradient(at 92.39% 89.18%, hsla(40, 84%, 55%, 1) 0%, hsla(40, 84%, 55%, 0) 100%),
+                  radial-gradient(at 76.09% 38.92%, hsla(48, 84%, 58%, 1) 0%, hsla(48, 84%, 58%, 0) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+  }
+
+  .logo-effect {
+      filter: drop-shadow(1px 1px 20px rgb(138, 129, 0));
+  }
+
+  .flex-centered {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const expandableImage = document.getElementById("expandableImage");
+    expandableImage.addEventListener("click", () => {
+      expandableImage.classList.toggle("scale-125");
+    });
+  });
+</script>
