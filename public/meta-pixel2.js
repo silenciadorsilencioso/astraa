@@ -17,6 +17,6 @@
     s.parentNode.insertBefore(t, s);
   })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
   
-  fbq('init', '923686009417640'); // ID de tu Pixel
-  fbq('track', 'PageView'); // Evento de vista de página
+  fbq('init', '923686009417640'); // Reemplaza con tu ID de píxel
+  fbq('track', 'PageView');
   
