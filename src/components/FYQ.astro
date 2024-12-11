@@ -1,0 +1,76 @@
+---
+const dropdownItems = [
+    { title: 'Mal Funnel', description: '¿Tus sistemas no están funcionando? Puede que estés aquí porque tus funnels están mal estructurados. Como consejo, presta atención a tu cliente. Si no sabes quién es tu cliente o cómo brindarle la atención adecuada, es momento de mejorar tus funnels. Recuerda, no todo es ventas; es fundamental definir bien el proceso del cliente en tu negocio. Agenda una reunión consultiva para optimizar tu funnel.' },
+    { title: 'Ofreces lo mismo que todos', description: 'Hay cientos de competidores ofreciendo lo mismo que tú, con precios más bajos y mejores resultados. Incluso hay estafadores y vende-cursos que parecen destacar más. Si quieres diferenciarte y no sabes cómo, agenda una reunión consultiva para trabajar juntos en potenciar tu producto.' },
+    { title: 'Falta de tiempo', description: 'Estás 24/7 en el negocio y no tienes tiempo para gestionar los trades, enseñar a tus clientes ni disfrutar de tu vida. Simplifica tu trabajo con buenos sistemas personalizados. Agenda una reunión consultiva y solucionemos esa falta de tiempo.' },
+    { title: 'Poca rentabilidad / No hay producto propio', description: '¿No eres un trader rentable pero quieres vender formaciones? La mitad de los vendedores en internet ofrecen información, señales ajenas, o bots de Telegram sin un producto sólido. No te preocupes, podemos ayudarte a crear un buen producto. Agenda una reunión consultiva para empezar.' },
+    { title: 'Pocos / Malos clientes', description: '¿Tus clientes son de baja calidad o esperan hacerse millonarios contigo sin esfuerzo? Cambia tu segmentación. Agenda una reunión consultiva para que trabajemos juntos en segmentar y filtrar adecuadamente a tus clientes.' },
+];
+---
+
+<div class="text-white rounded-lg">
+  <h2 class="text-5xl text-center xl:text-6xl">TUS PROBLEMAS</h2>
+  <div class="mt-12 space-y-4">
+    {dropdownItems.map((item, index) => (
+      <div class="border-t border-gray-800 pt-4" key={index}>
+        <details class="group">
+          <summary class="flex justify-between items-center cursor-pointer text-lg font-semibold md:text-xl">
+            {item.title}
+            <svg
+              class="ml-2 w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 9.293a1 1 0 011.414 0L10 12.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </summary>
+          <div class="mt-2 text-gray-400 description-container">
+            {item.description}
+          </div>
+        </details>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+/* Contenedor padre */
+.text-white {
+  overflow: hidden;
+}
+
+/* Mantener dimensiones fijas */
+details {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Evitar expansión horizontal */
+.details summary {
+  white-space: nowrap; /* Evitar saltos de línea en el texto */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Suavidad en el ícono */
+details summary svg {
+  transition: transform 0.3s ease;
+}
+
+/* Rotación del ícono al expandirse */
+details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+/* Evitar cambios de tamaño al expandirse */
+.details .description-container {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+</style>

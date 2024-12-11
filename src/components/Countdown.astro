@@ -1,0 +1,91 @@
+---
+const countdownDate = {
+  year: 2025,
+  month: 2,
+  day: 19,
+  hours: 7,
+  minutes: 31,
+  seconds: 0,
+};
+---
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<div class="countdown-container">
+  <h1 class="countdown-title">La Venta finaliza en:</h1>
+  <div id="cuenta" class="cuenta"></div>
+</div>
+
+<script src="/simplyCountdown.min.js" defer></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    simplyCountdown("#cuenta", {
+      year: 2024,
+      month: 12,
+      day: 26,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+      words: {
+        days: " DÍAS",
+        hours: " HORAS",
+        minutes: " MINUTOS",
+        seconds: " SEGUNDOS",
+        pluralLetter: "",
+      },
+      plural: false,
+      inline: false,
+      enableUtc: true,
+      onEnd: () => console.log("¡Cuenta regresiva finalizada!"),
+    });
+  });
+</script>
+
+<style>
+  /* Contenedor principal */
+  .countdown-container {
+    text-align: center;
+    color: #ffffff; /* Texto blanco */
+    font-family: 'Silkscreen', sans-serif; /* Fuente retro */
+    padding: 20px;
+  }
+
+  .countdown-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  /* Contenedor del contador */
+  #cuenta {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Espaciado entre los bloques */
+  }
+
+  /* Estilo de cada bloque */
+  #cuenta .simply-section {
+    display: flex;
+    flex-direction: column; /* Números arriba del texto */
+    align-items: center; /* Alineación centrada */
+    text-align: center;
+  }
+
+  /* Estilo para los números */
+  #cuenta .simply-amount {
+    font-size: 3rem; /* Tamaño grande para los números */
+    font-weight: bold;
+    color: #ffffff; /* Números blancos */
+    margin-bottom: 5px; /* Espaciado entre números y texto */
+  }
+
+  /* Estilo para el texto */
+  #cuenta .simply-word {
+    font-size: 1.5rem; /* Tamaño para el texto descriptivo */
+    font-weight: normal;
+    color: #ffffff; /* Texto blanco */
+    text-transform: uppercase;
+  }
+</style>

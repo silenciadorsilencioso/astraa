@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout2.astro';
 import Navbar from '../components/Navbar.astro';
+import Countdown from '../components/Countdown.astro';
+import FYQ from '../components/FYQ.astro';
 ---
 
 <Layout title="TRADIUN">
@@ -10,6 +12,8 @@ import Navbar from '../components/Navbar.astro';
   <link rel="icon" type="image/svg+xml" href="/public/logo.ico"/>
   
   <main class="min-h-screen relative flex flex-col items-center overflow-hidden">
+ 
+    
 
       <!-- Logo superior -->
       <div>
@@ -19,6 +23,10 @@ import Navbar from '../components/Navbar.astro';
       <!-- Imagen central -->
       <div>
         <img style="width: 700px; height: auto;" class="brightness-90" src="/images/TEST.png" alt="Logo Sin Fondo">
+      </div>
+
+      <div>
+        <img style="width: 400px; height: auto;" class="brightness-90" src="/images/textor.png" alt="Logo Sin Fondo">
       </div>
 
       <!-- Segunda imagen con efecto de expandir -->
@@ -48,10 +56,14 @@ import Navbar from '../components/Navbar.astro';
               CLICK AQUI
             </a>
           </div>
+          <Countdown/>
+                <!-- Imagen central -->
+      <div>
+        <img style="width: 700px; height: auto;" class="brightness-90" src="/images/EXTRAS.png" alt="Logo Sin Fondo">
+      </div>
           
-          
-          
-          
+      <FYQ/>
+      
       </div>
 
       <!-- Footer -->
