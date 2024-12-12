@@ -8,40 +8,48 @@ const countdownDate = {
   seconds: 0,
 };
 ---
+<!-- Fuentes de Google -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+<!-- Contenedor principal -->
 <div class="countdown-container">
   <h1 class="countdown-title">La Venta finaliza en:</h1>
   <div id="cuenta" class="cuenta"></div>
 </div>
 
-<script src="/simplyCountdown.min.js" defer></script>
-<script defer>
+<!-- Script desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/simplycountdown.js@1.5.0/dist/simplyCountdown.min.js" defer></script>
+<script is:inline>
   document.addEventListener("DOMContentLoaded", () => {
-    simplyCountdown("#cuenta", {
-      year: 2024,
-      month: 12,
-      day: 26,
-      hours: 0,
-      minutes: 0,
-      seconds: 0,
-      words: {
-        days: " DÍAS",
-        hours: " HORAS",
-        minutes: " MINUTOS",
-        seconds: " SEGUNDOS",
-        pluralLetter: "",
-      },
-      plural: false,
-      inline: false,
-      enableUtc: true,
-      onEnd: () => console.log("¡Cuenta regresiva finalizada!"),
-    });
+    if (document.querySelector("#cuenta")) {
+      simplyCountdown("#cuenta", {
+        year: 2025,
+        month: 2,
+        day: 19,
+        hours: 7,
+        minutes: 31,
+        seconds: 0,
+        words: {
+          days: " DÍAS",
+          hours: " HORAS",
+          minutes: " MINUTOS",
+          seconds: " SEGUNDOS",
+          pluralLetter: "",
+        },
+        plural: false,
+        enableUtc: true,
+        onEnd: () => console.log("¡Cuenta regresiva finalizada!"),
+      });
+    } else {
+      console.error("El elemento con ID #cuenta no fue encontrado.");
+    }
   });
 </script>
 
+
+<!-- Estilos -->
 <style>
   /* Contenedor principal */
   .countdown-container {
