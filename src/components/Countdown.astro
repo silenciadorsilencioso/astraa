@@ -14,7 +14,7 @@ const countdownDate = {
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Contenedor principal -->
-<div class="countdown-container">
+<div class="countdown-container mt-12">
   <h1 class="countdown-title">La Venta finaliza en:</h1>
   <div id="cuenta" class="cuenta"></div>
 </div>
@@ -95,5 +95,33 @@ const countdownDate = {
     font-weight: normal;
     color: #ffffff; /* Texto blanco */
     text-transform: uppercase;
+  }
+
+    /* Responsividad */
+    @media (max-width: 768px) {
+    .countdown-title {
+      font-size: 1.5rem;
+    }
+    #cuenta .simply-amount {
+      font-size: 1.8rem;
+    }
+    #cuenta .simply-word {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .countdown-title {
+      font-size: 1.2rem;
+    }
+    #cuenta {
+      gap: 10px;
+    }
+    #cuenta .simply-amount {
+      font-size: 1.5rem;
+    }
+    #cuenta .simply-word {
+      font-size: 0.8rem;
+    }
   }
 </style>
