@@ -65,7 +65,10 @@ import FYQ from '../components/FYQ.astro';
                     <!--    
                     <FYQ/>
                     -->
-
+                    <div>
+                      <iframe class="m-auto rounded-xl resolution-video  border-2 border-white-800 glow-effect logo-effect video-container "src="https://www.youtube.com/embed/hfydQgv245A" title="‎" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </div>
+          
       </div>
       <!-- Footer -->
       <footer class="w-full mt-4 flex justify-center">
@@ -95,6 +98,11 @@ import FYQ from '../components/FYQ.astro';
       background-clip: text;
       color: transparent;
   }
+
+  .glow-effect {
+    text-shadow: 0px 0px 5px #cfb629, /* Primera capa de brillo */
+                 0px 0px 10px #cfb629, /* Segunda capa de brillo */
+                 0px 0px 0px #cfb629; /* Tercera capa de brillo para un brillo más intenso */}
 
   .logo-effect {
       filter: drop-shadow(1px 1px 20px rgb(138, 129, 0));
